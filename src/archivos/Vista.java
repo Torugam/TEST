@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 public class Vista extends javax.swing.JFrame {
-
+    String siguientejuego="O";
     String turno="X";
     JLabel lbs[] = new JLabel[9];
     int vs[] []={
@@ -66,6 +66,9 @@ public class Vista extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         LObjecto1 = new javax.swing.JLabel();
         LObjecto9 = new javax.swing.JLabel();
+        lbTurno = new javax.swing.JLabel();
+        lbpuntajeo = new javax.swing.JLabel();
+        lbpuntajex = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -398,6 +401,17 @@ public class Vista extends javax.swing.JFrame {
         });
         jPanel3.add(LObjecto9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 80, 70));
 
+        lbTurno.setText("Turno de X");
+        jPanel3.add(lbTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+
+        lbpuntajeo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbpuntajeo.setText("O=");
+        jPanel3.add(lbpuntajeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 50, 50));
+
+        lbpuntajex.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbpuntajex.setText("X=");
+        jPanel3.add(lbpuntajex, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 700, 300));
 
         jPanel4.setBackground(new java.awt.Color(32, 33, 36));
@@ -471,6 +485,12 @@ public class Vista extends javax.swing.JFrame {
             lbs[i].setText("");
             lbs[i].setBackground(new java.awt.Color(20, 189, 172));
         }
+        turno=siguientejuego;
+        if(siguientejuego.equals("O")){
+        }else{
+        siguientejuego="O";
+        }
+        lbTurno.setText("Turno de" +turno);
     }//GEN-LAST:event_jLabel1MousePressed
     
     public void comprobarGanador(){
@@ -482,7 +502,10 @@ public class Vista extends javax.swing.JFrame {
                 lbs[vs[i][0]-1].setBackground(new java.awt.Color(13, 161, 146));
                 lbs[vs[i][1]-1].setBackground(new java.awt.Color(13, 161, 146));
                 lbs[vs[i][2]-1].setBackground(new java.awt.Color(13, 161, 146));
-                System.out.print("gano X");
+          
+               lbTurno.setText("Ha ganado X");
+               lbpuntajex.setText(Integer.toString(Integer.parseInt(lbpuntajex.getText())+1));
+                
             }
             if(lbs[vs[i][0]-1].getText().equals("O") &&
                     lbs[vs[i][1]-1].getText().equals("O") &&
@@ -490,7 +513,10 @@ public class Vista extends javax.swing.JFrame {
                 lbs[vs[i][0]-1].setBackground(new java.awt.Color(20, 189, 172));
                 lbs[vs[i][1]-1].setBackground(new java.awt.Color(20, 189, 172));
                 lbs[vs[i][2]-1].setBackground(new java.awt.Color(20, 189, 172));
-                System.out.print("gano O");
+                
+                lbTurno.setText("Ha ganado O");
+                lbpuntajeo.setText(Integer.toString(Integer.parseInt(lbpuntajeo.getText())+1));
+                
             }
         }
     }
@@ -513,6 +539,7 @@ public class Vista extends javax.swing.JFrame {
         else{
             turno="X";
         }
+        lbTurno.setText("Le toca a "+turno);
     }
     /**
      * @param args the command line arguments
@@ -575,5 +602,8 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lbTurno;
+    private javax.swing.JLabel lbpuntajeo;
+    private javax.swing.JLabel lbpuntajex;
     // End of variables declaration//GEN-END:variables
 }
