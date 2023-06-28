@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 
 public class Vista extends javax.swing.JFrame {
+    boolean estado=true;
     String siguientejuego="O";
     String turno="X";
     JLabel lbs[] = new JLabel[9];
@@ -67,8 +68,10 @@ public class Vista extends javax.swing.JFrame {
         LObjecto1 = new javax.swing.JLabel();
         LObjecto9 = new javax.swing.JLabel();
         lbTurno = new javax.swing.JLabel();
-        lbpuntajeo = new javax.swing.JLabel();
-        lbpuntajex = new javax.swing.JLabel();
+        lb3 = new javax.swing.JLabel();
+        lb6 = new javax.swing.JLabel();
+        lbPuntajex = new javax.swing.JLabel();
+        lbPuntajeO = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -404,13 +407,19 @@ public class Vista extends javax.swing.JFrame {
         lbTurno.setText("Turno de X");
         jPanel3.add(lbTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
-        lbpuntajeo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbpuntajeo.setText("O=");
-        jPanel3.add(lbpuntajeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 50, 50));
+        lb3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lb3.setText("O=");
+        jPanel3.add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 30, 40));
 
-        lbpuntajex.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbpuntajex.setText("X=");
-        jPanel3.add(lbpuntajex, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        lb6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lb6.setText("X=");
+        jPanel3.add(lb6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+
+        lbPuntajex.setText("0");
+        jPanel3.add(lbPuntajex, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 56, 20, 20));
+
+        lbPuntajeO.setText("0");
+        jPanel3.add(lbPuntajeO, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 20, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 700, 300));
 
@@ -491,6 +500,7 @@ public class Vista extends javax.swing.JFrame {
         siguientejuego="O";
         }
         lbTurno.setText("Turno de" +turno);
+        estado=true;
     }//GEN-LAST:event_jLabel1MousePressed
     
     public void comprobarGanador(){
@@ -503,9 +513,10 @@ public class Vista extends javax.swing.JFrame {
                 lbs[vs[i][1]-1].setBackground(new java.awt.Color(13, 161, 146));
                 lbs[vs[i][2]-1].setBackground(new java.awt.Color(13, 161, 146));
           
+               
+               lbPuntajex.setText(Integer.toString(Integer.parseInt(lbPuntajex.getText())+1));
                lbTurno.setText("Ha ganado X");
-               lbpuntajex.setText(Integer.toString(Integer.parseInt(lbpuntajex.getText())+1));
-                
+               estado=false;
             }
             if(lbs[vs[i][0]-1].getText().equals("O") &&
                     lbs[vs[i][1]-1].getText().equals("O") &&
@@ -514,15 +525,16 @@ public class Vista extends javax.swing.JFrame {
                 lbs[vs[i][1]-1].setBackground(new java.awt.Color(20, 189, 172));
                 lbs[vs[i][2]-1].setBackground(new java.awt.Color(20, 189, 172));
                 
-                lbTurno.setText("Ha ganado O");
-                lbpuntajeo.setText(Integer.toString(Integer.parseInt(lbpuntajeo.getText())+1));
                 
+                lbPuntajeO.setText(Integer.toString(Integer.parseInt(lbPuntajeO.getText())+1));
+                lbTurno.setText("Ha ganado O");
+                estado=false;
             }
         }
     }
         
     public void presionar(int casilla){
-        if(lbs[casilla-1].getText().equals("")){
+        if(lbs[casilla-1].getText().equals("")&&estado){
             lbs[casilla-1].setText(turno);
             cambiarTurno();
             comprobarGanador();
@@ -602,8 +614,10 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel lb3;
+    private javax.swing.JLabel lb6;
+    private javax.swing.JLabel lbPuntajeO;
+    private javax.swing.JLabel lbPuntajex;
     private javax.swing.JLabel lbTurno;
-    private javax.swing.JLabel lbpuntajeo;
-    private javax.swing.JLabel lbpuntajex;
     // End of variables declaration//GEN-END:variables
 }
