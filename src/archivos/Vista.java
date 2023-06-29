@@ -67,16 +67,19 @@ public class Vista extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         LObjecto1 = new javax.swing.JLabel();
         LObjecto9 = new javax.swing.JLabel();
-        lbTurno = new javax.swing.JLabel();
-        lb3 = new javax.swing.JLabel();
-        lb6 = new javax.swing.JLabel();
-        lbPuntajex = new javax.swing.JLabel();
-        lbPuntajeO = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        lbPuntajex = new javax.swing.JLabel();
+        lb6 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        lb3 = new javax.swing.JLabel();
+        lbPuntajeO = new javax.swing.JLabel();
+        lbTurno = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cero");
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(32, 33, 36));
@@ -348,9 +351,9 @@ public class Vista extends javax.swing.JFrame {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+            .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LObjecto2, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(LObjecto2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
@@ -380,7 +383,8 @@ public class Vista extends javax.swing.JFrame {
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addComponent(LObjecto1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(LObjecto1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel18Layout.setVerticalGroup(
@@ -404,24 +408,7 @@ public class Vista extends javax.swing.JFrame {
         });
         jPanel3.add(LObjecto9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, 80, 70));
 
-        lbTurno.setText("Turno de X");
-        jPanel3.add(lbTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
-
-        lb3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lb3.setText("O=");
-        jPanel3.add(lb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 30, 40));
-
-        lb6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lb6.setText("X=");
-        jPanel3.add(lb6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
-
-        lbPuntajex.setText("0");
-        jPanel3.add(lbPuntajex, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 56, 20, 20));
-
-        lbPuntajeO.setText("0");
-        jPanel3.add(lbPuntajeO, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 20, -1));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 700, 300));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 700, 300));
 
         jPanel4.setBackground(new java.awt.Color(32, 33, 36));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -434,9 +421,64 @@ public class Vista extends javax.swing.JFrame {
                 jLabel1MousePressed(evt);
             }
         });
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 0, 120, 20));
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 120, 20));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 270, 20));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 270, 20));
+
+        jPanel5.setBackground(new java.awt.Color(32, 33, 36));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(44, 46, 49)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lbPuntajex.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        lbPuntajex.setForeground(new java.awt.Color(255, 255, 255));
+        lbPuntajex.setText("0");
+        jPanel5.add(lbPuntajex, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 20, 30));
+
+        lb6.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        lb6.setForeground(new java.awt.Color(255, 255, 255));
+        lb6.setText("X");
+        jPanel5.add(lb6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, 30));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 160, 30));
+
+        jPanel6.setBackground(new java.awt.Color(32, 33, 36));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(44, 46, 49)));
+
+        lb3.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        lb3.setForeground(new java.awt.Color(255, 255, 255));
+        lb3.setText("O");
+
+        lbPuntajeO.setFont(new java.awt.Font("SansSerif", 0, 24)); // NOI18N
+        lbPuntajeO.setForeground(new java.awt.Color(255, 255, 255));
+        lbPuntajeO.setText("0");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lb3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(lbPuntajeO, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbPuntajeO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, 30));
+
+        lbTurno.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lbTurno.setForeground(new java.awt.Color(157, 167, 171));
+        lbTurno.setText("Turno de X");
+        lbTurno.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel1.add(lbTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -446,7 +488,7 @@ public class Vista extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
         );
 
         pack();
@@ -499,45 +541,17 @@ public class Vista extends javax.swing.JFrame {
         }else{
         siguientejuego="O";
         }
-        lbTurno.setText("Turno de" +turno);
+        lbTurno.setText("Turno de " +turno);
         estado=true;
     }//GEN-LAST:event_jLabel1MousePressed
     
-    public void comprobarGanador(){
-        for(int i =0; i < vs.length; i++){
-            if(lbs[vs[i][0]-1].getText().equals("X") &&
-                    lbs[vs[i][1]-1].getText().equals("X") &&
-                    lbs[vs[i][2]-1].getText().equals("X")){
-                
-                lbs[vs[i][0]-1].setBackground(new java.awt.Color(13, 161, 146));
-                lbs[vs[i][1]-1].setBackground(new java.awt.Color(13, 161, 146));
-                lbs[vs[i][2]-1].setBackground(new java.awt.Color(13, 161, 146));
-          
-               
-               lbPuntajex.setText(Integer.toString(Integer.parseInt(lbPuntajex.getText())+1));
-               lbTurno.setText("Ha ganado X");
-               estado=false;
-            }
-            if(lbs[vs[i][0]-1].getText().equals("O") &&
-                    lbs[vs[i][1]-1].getText().equals("O") &&
-                    lbs[vs[i][2]-1].getText().equals("O")){
-                lbs[vs[i][0]-1].setBackground(new java.awt.Color(20, 189, 172));
-                lbs[vs[i][1]-1].setBackground(new java.awt.Color(20, 189, 172));
-                lbs[vs[i][2]-1].setBackground(new java.awt.Color(20, 189, 172));
-                
-                
-                lbPuntajeO.setText(Integer.toString(Integer.parseInt(lbPuntajeO.getText())+1));
-                lbTurno.setText("Ha ganado O");
-                estado=false;
-            }
-        }
-    }
-        
-    public void presionar(int casilla){
+     public void presionar(int casilla){
         if(lbs[casilla-1].getText().equals("")&&estado){
             lbs[casilla-1].setText(turno);
+           
             cambiarTurno();
             comprobarGanador();
+            
         }
         
     }
@@ -552,7 +566,45 @@ public class Vista extends javax.swing.JFrame {
             turno="X";
         }
         lbTurno.setText("Le toca a "+turno);
+        
     }
+    
+    public void empate(){
+        
+    }
+    public void comprobarGanador(){
+        for(int i =0; i < vs.length; i++){
+            if(lbs[vs[i][0]-1].getText().equals("X") &&
+                    lbs[vs[i][1]-1].getText().equals("X") &&
+                    lbs[vs[i][2]-1].getText().equals("X") ){
+                
+                lbs[vs[i][0]-1].setBackground(new java.awt.Color(13, 161, 146));
+                lbs[vs[i][1]-1].setBackground(new java.awt.Color(13, 161, 146));
+                lbs[vs[i][2]-1].setBackground(new java.awt.Color(13, 161, 146));
+          
+               lbPuntajex.setText(Integer.toString(Integer.parseInt(lbPuntajex.getText())+1));
+               lbTurno.setText("Ha ganado X");
+               estado=false;
+            }
+            if(lbs[vs[i][0]-1].getText().equals("O") &&
+                    lbs[vs[i][1]-1].getText().equals("O") &&
+                    lbs[vs[i][2]-1].getText().equals("O")){
+                
+                lbs[vs[i][0]-1].setBackground(new java.awt.Color(13, 161, 146));
+                lbs[vs[i][1]-1].setBackground(new java.awt.Color(13, 161, 146));
+                lbs[vs[i][2]-1].setBackground(new java.awt.Color(13, 161, 146));
+                
+                lbPuntajeO.setText(Integer.toString(Integer.parseInt(lbPuntajeO.getText())+1));
+                lbTurno.setText("Ha ganado O");
+                estado=false;
+            }
+            
+        
+            
+        }
+    }
+        
+   
     /**
      * @param args the command line arguments
      */
@@ -611,6 +663,8 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
